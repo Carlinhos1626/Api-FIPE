@@ -8,7 +8,7 @@
     ],
     "routes": [
         {
-            "src": "/consulta/(.*)",
+            "src": "/(.*)",
             "dest": "index.js"
         }
     ]
