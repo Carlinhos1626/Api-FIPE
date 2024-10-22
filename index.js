@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors'; // Importe o pacote cors
 import { createLogger, format, transports } from 'winston';
 import { consultarPlaca } from './consulta.js'; // Certifique-se de usar o caminho correto
 
@@ -18,6 +19,9 @@ const logger = createLogger({
 
 const app = express();
 const port = process.env.PORT || 3000;
+
+// Ative o CORS para todas as rotas
+app.use(cors());
 
 app.get('/consulta/:placa', async (req, res) => {
     const placa = req.params.placa;
